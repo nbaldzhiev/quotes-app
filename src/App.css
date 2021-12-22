@@ -1,38 +1,151 @@
+html {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
 .App {
-  text-align: center;
+    width: 1000px;
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-text {
+    border-left: 5px solid #fcae26;
+    border-top-left-radius: 1rem;
+    padding-left: 0.5rem;
+    display: flex;
+    font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.quotes-part {
+    align-self: center;
+    color: #fcae26;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.App-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.quote-container {
+    display: flex;
+    align-items: center;
+}
+
+.quote-content-container {
+    padding: 0 2rem;
+}
+
+.quote-text {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.quote-author {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+}
+
+.quote-author:visited {
+    color: grey;
+}
+
+.quote-author:hover {
+    cursor: pointer;
+    color: #fcae26;
+}
+
+.randomQuoteButton, select {
+    font-size: 1.2rem;
+    width: 250px;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border: none;
+    border-radius: 2rem;
+    text-decoration:none;
+    color: #FFFFFF;
+    text-align:center;
+    transition: all 0.4s;
+}
+
+.randomQuoteButton {
+    background-color: #fcae26;
+}
+
+.randomQuoteButton:hover, select:hover {
+    font-size: 1.5rem;
+    background-color:#4095c6;
+}
+
+select {
+    background-color: #04AA6D;
+    appearance: none;
+    margin-bottom: 0.2rem;
   }
+
+@media (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+    }
+    .App {
+        width: 100%;
+    }
+    .header-text {
+        margin-left: 1rem;
+        font-size: 1.7rem;
+    }
+    .quote-container {
+        width: 90%;
+    }
+    img {
+        width: 80px;
+        height: 80px;
+    }
+    .quote-text {
+        font-size: 1.7rem;
+    }
+    .quote-author {
+        font-size: 1rem;
+    }
+    .randomQuoteButton, select {
+        font-size: .9rem;
+        width: 200px;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Tooltip container */
+.quote-author {
+    position: relative;
+    display: inline-block;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Tooltip text */
+  .quote-author span {
+    font-size: 0.8rem;
+    visibility: hidden;
+    width: 200px;
+    background-color: #04AA6D;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    position: absolute;
+    z-index: 1;
   }
-}
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .quote-author:hover span {
+    visibility: visible;
+  }
